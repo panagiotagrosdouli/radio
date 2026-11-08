@@ -10,7 +10,8 @@ Radio Live is a digital radio station broadcasting from Athens. Its website pair
 - Live stream player with play, pause, volume, mute, reconnect, and accessible status updates
 - Daily show line-up with the current Athens-time show highlighted
 - Sound Desk links for music news and artist coverage
-- About page, installable web app manifest, and Radio Live visual identity
+- About page, installable web app manifest, and a custom vinyl-wave Radio Live identity
+- Downloadable vector mark at `public/radio-live-logo.svg`
 
 ## Run locally
 

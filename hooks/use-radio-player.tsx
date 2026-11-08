@@ -135,7 +135,8 @@ function useRadioPlaybackController() {
     const audio = audioRef.current;
     if (!audio) return;
     const activeOperation = operationId;
-    const saved = Number(localStorage.getItem(VOLUME_KEY));
+    const stored = localStorage.getItem(VOLUME_KEY);
+    const saved = stored === null ? RADIO_CONFIG.defaultVolume : Number(stored);
     const initial = Number.isFinite(saved) && saved >= 0 && saved <= 1 ? saved : RADIO_CONFIG.defaultVolume;
     audio.volume = initial;
     audio.muted = initial === 0;
@@ -156,6 +157,13 @@ function useRadioPlaybackController() {
       audio.load();
     };
   }, [clearTimers, retry]);
+
+  useEffect(() => {
+    // Browsers may block unmuted autoplay until the listener interacts with the page.
+    // In that case, attemptPlayback leaves the player paused so Play can be pressed.
+    wantsPlayback.current = true;
+    void attemptPlayback(false);
+  }, [attemptPlayback]);
 
   useEffect(() => {
     if (!("mediaSession" in navigator)) return;

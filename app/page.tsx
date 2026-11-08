@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Headphones, RadioTower, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { RadioPlayer } from "@/components/radio-player";
+import { RadioLiveMark } from "@/components/radio-live-mark";
 import { ShowSchedule } from "@/components/show-schedule";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
@@ -28,7 +29,7 @@ export default function Home() {
           <div className="hero-art" aria-hidden="true">
             <div className="hero-art-orbit orbit-one" />
             <div className="hero-art-orbit orbit-two" />
-            <div className="hero-art-disc"><span className="disc-center"><RadioTower /></span></div>
+            <div className="hero-art-disc"><span className="disc-center"><RadioLiveMark /></span></div>
             <span className="hero-art-label label-top">RL · 24/7</span>
             <span className="hero-art-label label-bottom">ON AIR<br />EVERYWHERE</span>
             <span className="hero-art-note">YOUR RADIO<br />ALL DAY, EVERY DAY</span>

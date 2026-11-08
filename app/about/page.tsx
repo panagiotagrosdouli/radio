@@ -2,6 +2,9 @@ import Link from "next/link";
 import { ArrowRight, Globe2, Headphones, Mic2 } from "lucide-react";
 import { RadioLiveMark } from "@/components/radio-live-mark";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { sitePath } from "@/lib/site-path";
+
+export const dynamic = "force-static";
 
 export default function AboutPage() {
   return (
@@ -20,7 +23,7 @@ export default function AboutPage() {
             <p className="about-lead">A good radio station makes the day feel like it has a soundtrack.</p>
             <p>From Athens to wherever you are, Radio Live brings together Greek voices, new discoveries and songs that have earned their place in your life. The mood moves with the hour, but the feeling stays: you’re in good company.</p>
             <p>We believe the best listening happens when there’s room for surprise. So settle in, keep us on, and let the next track find you.</p>
-            <Link className="text-link" href="/#live">Tune in now <ArrowRight /></Link>
+            <Link className="text-link" href={sitePath("/#live")}>Tune in now <ArrowRight /></Link>
           </div>
         </section>
 

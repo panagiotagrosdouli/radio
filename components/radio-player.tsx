@@ -26,7 +26,7 @@ function AudioVisualizer({ active }: { active: boolean }) {
 }
 
 export function RadioPlayer() {
-  const { audioRef, status, volume, toggle, retry, setVolume, toggleMute, handlers } = useRadioPlayer();
+  const { status, volume, toggle, retry, setVolume, toggleMute } = useRadioPlayer();
   const isPlaying = status === "playing";
   const isBusy = status === "connecting" || status === "reconnecting";
   const statusCopy = STATUS[status];
@@ -34,7 +34,6 @@ export function RadioPlayer() {
 
   return (
     <section className="player-panel" aria-labelledby="station-name">
-      <audio ref={audioRef} preload="none" {...handlers} />
       <div className="player-topline">
         <div className={`live-badge ${isPlaying ? "is-live" : ""}`}>
           <span className="live-dot" /> LIVE

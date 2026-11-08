@@ -482,6 +482,60 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline-color: var(
   .station-notes { padding: 2rem 1rem; }
 }
 
+.radio-dock {
+  position: fixed;
+  z-index: 80;
+  right: clamp(.75rem, 2.2vw, 2rem);
+  bottom: max(.75rem, env(safe-area-inset-bottom));
+  left: clamp(.75rem, 2.2vw, 2rem);
+  display: flex;
+  align-items: center;
+  gap: clamp(.65rem, 2vw, 1.5rem);
+  width: min(48rem, calc(100% - 1.5rem));
+  min-height: 4.5rem;
+  margin-inline: auto;
+  padding: .65rem .8rem .65rem 1rem;
+  border: 1px solid rgba(255,247,232,.2);
+  border-radius: 1.25rem;
+  background: rgba(23,34,82,.96);
+  color: #fff7e8;
+  box-shadow: 0 1rem 3rem rgba(13,19,48,.26);
+  backdrop-filter: blur(18px);
+}
+.radio-dock-station { display: flex; align-items: center; gap: .7rem; min-width: 0; }
+.radio-dock-mark { display: grid; width: 2.8rem; height: 2.8rem; flex: 0 0 auto; place-items: center; border-radius: .85rem; background: var(--citron); color: var(--ink); }
+.radio-dock-mark svg { width: 1.9rem; height: 1.9rem; }
+.radio-dock-name { display: grid; gap: .18rem; min-width: 0; }
+.radio-dock-name strong { font-size: .69rem; letter-spacing: .12em; }
+.radio-dock-name small { color: rgba(255,247,232,.66); font-size: .68rem; white-space: nowrap; }
+.radio-dock-signal { display: flex; align-items: center; gap: .45rem; margin-left: auto; color: rgba(255,247,232,.72); font-size: .62rem; font-weight: 800; letter-spacing: .1em; white-space: nowrap; }
+.radio-dock-signal i { width: .48rem; height: .48rem; border-radius: 50%; background: var(--ember); }
+.radio-dock.is-playing .radio-dock-signal i { background: var(--citron); box-shadow: 0 0 .7rem var(--citron); animation: dock-pulse 1.4s ease-in-out infinite; }
+.radio-dock-control { display: grid; width: 3rem; height: 3rem; flex: 0 0 auto; place-items: center; border: 0; border-radius: 50%; background: var(--ember); color: var(--ink); cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.radio-dock-control:hover { transform: scale(1.06); background: var(--citron); }
+.radio-dock-control:disabled { cursor: progress; }
+.radio-dock-control svg { width: 1.15rem; height: 1.15rem; }
+.radio-dock-full { display: inline-flex; align-items: center; gap: .3rem; color: rgba(255,247,232,.8); font-size: .73rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.radio-dock-full:hover { color: var(--citron); }
+.radio-dock-full svg { width: .9rem; height: .9rem; }
+.dock-spinner { width: 1rem; height: 1rem; border: 2px solid rgba(23,34,82,.28); border-top-color: var(--ink); border-radius: 50%; animation: dock-spin .7s linear infinite; }
+@keyframes dock-pulse { 50% { opacity: .45; transform: scale(.78); } }
+@keyframes dock-spin { to { transform: rotate(360deg); } }
+body { padding-bottom: 5.75rem; }
+@media (max-width: 34rem) {
+  .radio-dock { gap: .6rem; min-height: 4.1rem; padding: .55rem .65rem; border-radius: 1rem; }
+  .radio-dock-mark { width: 2.45rem; height: 2.45rem; }
+  .radio-dock-mark svg { width: 1.65rem; height: 1.65rem; }
+  .radio-dock-name strong { font-size: .62rem; }
+  .radio-dock-name small { font-size: .59rem; }
+  .radio-dock-signal { display: none; }
+  .radio-dock-control { width: 2.7rem; height: 2.7rem; }
+  .radio-dock-full { font-size: .67rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radio-dock.is-playing .radio-dock-signal i, .dock-spinner { animation: none; }
+}
+
 /* Radio Live's own mark: a record groove crossed by a live waveform. */
 .wordmark { gap: .8rem; }
 .wordmark-icon { width: 2.45rem; height: 2.45rem; border-radius: .8rem; }

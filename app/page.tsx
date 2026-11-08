@@ -4,6 +4,9 @@ import { RadioPlayer } from "@/components/radio-player";
 import { RadioLiveMark } from "@/components/radio-live-mark";
 import { ShowSchedule } from "@/components/show-schedule";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { sitePath } from "@/lib/site-path";
+
+export const dynamic = "force-static";
 
 const notes = [
   { index: "01", title: "Fresh finds", copy: "New voices, new releases, and songs that deserve another spin." },
@@ -69,7 +72,7 @@ export default function Home() {
         <section className="stay-tuned">
           <div className="stay-orbit" aria-hidden="true"><span /><span /><span /></div>
           <div className="stay-copy"><p className="eyebrow"><Sparkles aria-hidden="true" /> Take us with you</p><h2>Your radio.<br /><em>Everywhere.</em></h2><p>At home, on the way, or wherever the day takes you. Radio Live is always within reach.</p></div>
-          <Link href="/about" className="stay-link">Meet the station <ArrowUpRight aria-hidden="true" /></Link>
+          <Link href={sitePath("/about/")} className="stay-link">Meet the station <ArrowUpRight aria-hidden="true" /></Link>
           <span className="stay-footnote">ATHENS · 24 HOURS · 7 DAYS</span>
         </section>
       </div>

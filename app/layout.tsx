@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { RadioPlaybackProvider } from "@/hooks/use-radio-player";
+import { PersistentRadioDock } from "@/components/persistent-radio-dock";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,6 +24,8 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+export const dynamic = "force-static";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <RadioPlaybackProvider>
+          {children}
+          <PersistentRadioDock />
+        </RadioPlaybackProvider>
+      </body>
     </html>
   );
 }

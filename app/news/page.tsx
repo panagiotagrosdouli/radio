@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { ArrowUpRight, Disc3, Mic2, RadioTower } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { sitePath } from "@/lib/site-path";
+
+export const dynamic = "force-static";
 
 const desks = [
   { source: "Billboard", title: "Charts, releases and the artists shaping music now", href: "https://www.billboard.com/c/music/music-news/", icon: Disc3 },
@@ -31,7 +34,7 @@ export default function NewsPage() {
 
         <div className="page-cta">
           <p>Keep the music in the room.</p>
-          <Link href="/#live">Back to the live room <ArrowUpRight /></Link>
+          <Link href={sitePath("/#live")}>Back to the live room <ArrowUpRight /></Link>
         </div>
       </div>
       <SiteFooter />

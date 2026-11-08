@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { RADIO_CONFIG } from "@/lib/radio-config";
 
 export type StreamStatus =
@@ -15,8 +15,11 @@ export type StreamStatus =
 const VOLUME_KEY = "radio-live-volume";
 const CONNECT_TIMEOUT_MS = 12_000;
 const MAX_RETRIES = 2;
+type RadioPlaybackController = ReturnType<typeof useRadioPlaybackController>;
+type RadioPlaybackValue = Omit<RadioPlaybackController, "audioRef">;
+const RadioPlaybackContext = createContext<RadioPlaybackValue | null>(null);
 
-export function useRadioPlayer() {
+function useRadioPlaybackController() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const wantsPlayback = useRef(false);
   const operationId = useRef(0);
@@ -190,4 +193,23 @@ export function useRadioPlayer() {
       },
     },
   };
+}
+
+export function RadioPlaybackProvider({ children }: { children: ReactNode }) {
+  const { audioRef, ...playback } = useRadioPlaybackController();
+  const attachAudio = useCallback((audio: HTMLAudioElement | null) => {
+    audioRef.current = audio;
+  }, [audioRef]);
+  return (
+    <RadioPlaybackContext.Provider value={playback}>
+      {children}
+      <audio ref={attachAudio} preload="none" hidden aria-hidden="true" {...playback.handlers} />
+    </RadioPlaybackContext.Provider>
+  );
+}
+
+export function useRadioPlayer() {
+  const playback = useContext(RadioPlaybackContext);
+  if (!playback) throw new Error("useRadioPlayer must be used inside RadioPlaybackProvider");
+  return playback;
 }

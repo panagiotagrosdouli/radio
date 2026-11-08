@@ -6,10 +6,11 @@ import "./professional-theme.css";
 import "./readable-theme.css";
 import "./radio-station-theme.css";
 import "./station-colour.css";
+import "./on-air-layout.css";
 
 export const metadata: Metadata = {
-  title: { default: "Radio Live — We’ve Got Rhythm", template: "%s — Radio Live" },
-  description: "No ads. Just music, voices and stories worth staying for. Tune in to Radio Live from Athens, all day, every day, everywhere.",
+  title: { default: "Radio Live — Online Radio from Athens", template: "%s — Radio Live" },
+  description: "Listen live to Radio Live, an online radio station from Athens. Music, shows and stories, streaming all day.",
   manifest: "/manifest.webmanifest",
   applicationName: "Radio Live",
   appleWebApp: {
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f8fc",
+  themeColor: "#f6f4ee",
   colorScheme: "light",
 };
 

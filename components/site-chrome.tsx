@@ -10,12 +10,12 @@ export function SiteHeader() {
         <span className="wordmark-type"><span>RADIO</span><b>LIVE</b></span>
       </Link>
       <nav className="main-nav" aria-label="Main navigation">
-        <Link href={sitePath("/#live")}>Listen</Link>
-        <Link href={sitePath("/#schedule")}>Shows</Link>
+        <Link href={sitePath("/#live")}>Listen Live</Link>
+        <Link href={sitePath("/#schedule")}>Schedule</Link>
         <Link href={sitePath("/news/")}>The Sound Desk</Link>
-        <Link href={sitePath("/about/")}>Our story</Link>
+        <Link href={sitePath("/about/")}>About</Link>
       </nav>
-      <a className="header-status" href={sitePath("/#live")}><span className="live-dot" /> <span>ON AIR · 24/7</span></a>
+      <a className="header-status" href={sitePath("/#live")}><span className="live-dot" /> <span>LIVE ONLINE · 24/7</span></a>
     </header>
   );
 }
@@ -24,7 +24,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <span className="footer-brand"><RadioLiveMark /> RADIO LIVE</span>
-      <span>WE’VE GOT RHYTHM · ATHENS</span>
+      <span>ONLINE RADIO · ATHENS</span>
       <span>© {new Date().getFullYear()} RADIO LIVE</span>
     </footer>
   );

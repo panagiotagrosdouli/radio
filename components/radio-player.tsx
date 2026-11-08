@@ -1,8 +1,9 @@
 "use client";
 
-import { Pause, Play, Radio, RefreshCw, Volume1, Volume2, VolumeX } from "lucide-react";
+import { Pause, Play, RefreshCw, Volume1, Volume2, VolumeX } from "lucide-react";
 import { RADIO_CONFIG } from "@/lib/radio-config";
 import { StreamStatus, useRadioPlayer } from "@/hooks/use-radio-player";
+import { RadioLiveMark } from "@/components/radio-live-mark";
 
 const STATUS: Record<StreamStatus, { label: string; detail: string }> = {
   idle: { label: "Ready when you are", detail: "Press play to tune in to Radio Live" },
@@ -43,14 +44,14 @@ export function RadioPlayer() {
 
       <div className="player-layout">
         <div className="station-visual" aria-hidden="true">
-          <div className="station-core"><Radio /></div>
+          <div className="station-core"><RadioLiveMark /></div>
           <AudioVisualizer active={isPlaying} />
           <span className="station-visual-label">RADIO LIVE · ATHENS</span>
         </div>
 
         <div className="player-details">
           <div className="station-identity">
-            <div className="station-emblem" aria-hidden="true"><Radio /></div>
+            <div className="station-emblem" aria-hidden="true"><RadioLiveMark /></div>
             <div>
               <p className="station-kicker">YOUR LIVE SIGNAL</p>
               <h2 id="station-name">{RADIO_CONFIG.name}</h2>

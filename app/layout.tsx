@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { RadioPlaybackProvider } from "@/hooks/use-radio-player";
 import { PersistentRadioDock } from "@/components/persistent-radio-dock";
 import "./globals.css";
+import "./professional-theme.css";
 
 export const metadata: Metadata = {
   title: { default: "Radio Live — We’ve Got Rhythm", template: "%s — Radio Live" },
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fff7e8",
-  colorScheme: "light",
+  themeColor: "#0b1220",
+  colorScheme: "dark",
 };
 
 export const dynamic = "force-static";

@@ -4,6 +4,7 @@ import { PersistentRadioDock } from "@/components/persistent-radio-dock";
 import "./globals.css";
 import "./professional-theme.css";
 import "./readable-theme.css";
+import "./radio-station-theme.css";
 
 export const metadata: Metadata = {
   title: { default: "Radio Live — We’ve Got Rhythm", template: "%s — Radio Live" },
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: "Radio Live",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
   },
   icons: {
     icon: "/favicon.svg",
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1220",
-  colorScheme: "dark",
+  themeColor: "#f6f8fc",
+  colorScheme: "light",
 };
 
 export const dynamic = "force-static";

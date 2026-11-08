@@ -1,0 +1,43 @@
+/* Readability pass for the midnight broadcast palette */
+.site-shell { color: var(--paper); }
+.site-header, .site-footer { color: var(--paper); }
+.wordmark { color: var(--paper-bright); }
+.wordmark b, .footer-brand svg { color: var(--ember-bright); }
+.main-nav a { color: rgba(244,243,238,.72); }
+.main-nav a:hover { color: var(--paper-bright); }
+.header-status { color: var(--paper); }
+
+.hero-copy h1, .live-intro h2, .section-heading h2, .page-intro h1,
+.stay-copy h2, .station-identity h2, .notes-heading > p:last-child,
+.note-card h3, .show-card h3, .news-card h2, .about-values h2 {
+  color: var(--paper-bright);
+}
+.hero-copy h1 em, .live-intro h2 em, .section-heading h2 em,
+.page-intro h1 em, .stay-copy h2 em { color: var(--ember-bright); }
+.hero-lede, .live-intro > p, .schedule-note p, .note-card p,
+.show-detail, .show-sound, .stay-copy > p:last-child, .page-intro .lede,
+.about-copy p, .about-values p, .news-card-top, .news-link {
+  color: var(--muted);
+}
+.hero-schedule-link, .scroll-cue, .hero-index, .hero-art-label,
+.section-rail > span:first-child, .station-identity, .stream-status strong,
+.show-time, .stay-link, .site-footer, .footer-brand {
+  color: var(--paper);
+}
+.hero-art-note, .station-kicker, .show-live, .note-index,
+.show-icon, .about-mark, .about-values svg, .footer-brand svg {
+  color: var(--ember-bright);
+}
+.station-ticker { color: var(--paper-bright); }
+.section-rail p, .show-number, .stay-footnote { color: rgba(228,235,245,.58); }
+.content-page { color: var(--paper); }
+.news-card, .news-card:nth-child(2) { background: #111d32; }
+.news-card:hover { background: #182944; }
+.news-card-top svg, .news-link svg { color: var(--ember-bright); }
+.about-mark { border-color: rgba(255,107,84,.42); }
+.site-footer { color: rgba(228,235,245,.66); }
+
+@media (max-width: 760px) {
+  .main-nav a { color: var(--paper); }
+  .hero-copy h1 { color: var(--paper-bright); }
+}

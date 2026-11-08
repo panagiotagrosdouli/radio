@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Headphones, Radio } from "lucide-react";
+import { RadioLiveMark } from "@/components/radio-live-mark";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="wordmark" href="/" aria-label="Radio Live home page">
-        <span className="wordmark-icon"><Radio /></span>
-        <span>RADIO <b>LIVE</b></span>
+        <span className="wordmark-icon"><RadioLiveMark /></span>
+        <span className="wordmark-type"><span>RADIO</span><b>LIVE</b></span>
       </Link>
       <nav className="main-nav" aria-label="Main navigation">
         <Link href="/#live">Listen</Link>
@@ -22,7 +22,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <span className="footer-brand"><Headphones /> RADIO LIVE</span>
+      <span className="footer-brand"><RadioLiveMark /> RADIO LIVE</span>
       <span>WE’VE GOT RHYTHM · ATHENS</span>
       <span>© {new Date().getFullYear()} RADIO LIVE</span>
     </footer>

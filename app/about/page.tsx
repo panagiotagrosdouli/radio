@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Globe2, Headphones, Mic2, RadioTower } from "lucide-react";
+import { ArrowRight, Globe2, Headphones, Mic2 } from "lucide-react";
+import { RadioLiveMark } from "@/components/radio-live-mark";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export default function AboutPage() {
@@ -14,7 +15,7 @@ export default function AboutPage() {
         </section>
 
         <section className="about-story">
-          <div className="about-mark" aria-hidden="true"><RadioTower /></div>
+          <div className="about-mark"><RadioLiveMark /></div>
           <div className="about-copy">
             <p className="about-lead">A good radio station makes the day feel like it has a soundtrack.</p>
             <p>From Athens to wherever you are, Radio Live brings together Greek voices, new discoveries and songs that have earned their place in your life. The mood moves with the hour, but the feeling stays: you’re in good company.</p>

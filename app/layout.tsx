@@ -3,6 +3,7 @@ import { RadioPlaybackProvider } from "@/hooks/use-radio-player";
 import { PersistentRadioDock } from "@/components/persistent-radio-dock";
 import "./globals.css";
 import "./professional-theme.css";
+import "./readable-theme.css";
 
 export const metadata: Metadata = {
   title: { default: "Radio Live — We’ve Got Rhythm", template: "%s — Radio Live" },
